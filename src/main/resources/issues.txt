@@ -1,0 +1,11 @@
+Issues:
+------------------------------------------
+
+DG-4 Utworzenie pliku names.xml z 5 imionami za pomoca generatora NameProperty + testy JUnit
+
+DG-3 odczyt i zapis z pliku przy u¿yciu FileUtils z CommonIO apache IOData.read IOData.write + testy JUnit
+
+DG-2 Implementacja XMLData.write. Napisaæ test. Plik testowy XML dodaæ do resources test + testy JUnit
+
+DG-1 Utworzenie szkieletu generatora interfejsy
+@olszewskij (Time spend: 4h )
