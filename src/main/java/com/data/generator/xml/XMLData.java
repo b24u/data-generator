@@ -43,7 +43,7 @@ public class XMLData<T> extends IOData<T> {
 	@Deprecated
 	public void write(T element) {
 		try {
-
+			System.out.println("dfds");
 			JAXBContext ctx = JAXBContext.newInstance(element.getClass());
 			Marshaller marshaller = ctx.createMarshaller();
 
