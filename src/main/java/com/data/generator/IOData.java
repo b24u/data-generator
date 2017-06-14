@@ -1,26 +1,31 @@
 package com.data.generator;
 
+import java.io.IOException;
 import java.util.List;
+
+import javax.xml.bind.JAXBException;
 
 public abstract class IOData<T> {
 
-  public IOData(String filePath) {
-    super();
-    setFilePath(filePath);
-  }
+	protected Class<T> dataInstance;
 
-  private String filePath;
+	public IOData(String filePath, Class<T> dataInstance) {
+		super();
+		setFilePath(filePath);
+	}
 
-  abstract public void write(List<T> listElements);
+	private String filePath;
 
-  abstract public List<T> read();
+	abstract public void write(List<T> listElements) throws IOException, JAXBException;
 
-  public String getFilePath() {
-    return filePath;
-  }
+	abstract public List<T> read();
 
-  public void setFilePath(String filePath) {
-    this.filePath = filePath;
-  }
+	public String getFilePath() {
+		return filePath;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
+	}
 
 }
