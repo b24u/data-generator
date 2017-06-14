@@ -17,23 +17,39 @@ import com.data.generator.IOData;
  */
 public class XMLData<T> extends IOData<T> {
 
-	public XMLData(String filePath) {
-		super(filePath);
-
-	}
-
 	@Override
 	public void write(List<T> listElements) {
 
 		try {
-			new File("/data-generator/src/main/resources/test/test.xml");
 
 			JAXBContext ctx = JAXBContext.newInstance();
 			Marshaller marshaller = ctx.createMarshaller();
 
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-			marshaller.marshal(listElements, new File("/data-generator/src/main/resources/test/test.xml"));
+			marshaller.marshal(listElements, new File(getFilePath()));
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public XMLData(String filePath, Class<T> dataInstance) {
+		super(filePath, dataInstance);
+	}
+
+	/**
+	 * To remove
+	 */
+	@Deprecated
+	public void write(T element) {
+		try {
+
+			JAXBContext ctx = JAXBContext.newInstance(element.getClass());
+			Marshaller marshaller = ctx.createMarshaller();
+
+			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+			marshaller.marshal(element, new File(getFilePath()));
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
