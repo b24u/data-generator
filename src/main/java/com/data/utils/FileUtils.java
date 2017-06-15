@@ -2,6 +2,8 @@ package com.data.utils;
 
 public class FileUtils {
 
+  public static String PROPERTY_NAME_PATH = "data/names.csv";
+
   public static String getResourcePath(String shortPath) {
     ClassLoader classLoader = FileUtils.class.getClassLoader();
     return classLoader.getResource(shortPath).getPath();

@@ -12,7 +12,7 @@ import com.data.generator.property.random.NumberRandom;
  *
  * @param <T>
  */
-public abstract class PropertyGenerator<T> extends IOData<T> {
+public abstract class PropertyGenerator<T> extends IOData<T> implements IProperty<T> {
 
   private NumberRandom randomNumber;
 

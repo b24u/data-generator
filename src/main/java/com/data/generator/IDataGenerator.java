@@ -1,13 +1,13 @@
 package com.data.generator;
 
-import java.util.List;
+import com.data.generator.property.Property;
 
-public interface IDataGenerator<T> extends IGenerator<T> {
+public interface IDataGenerator {
 
   /**
    * Pobranie danych
    * 
    * @return
    */
-  List<T> getData();
+  String getProperty(Property property);
 }

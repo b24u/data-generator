@@ -1,6 +1,12 @@
 package com.data.generator;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.data.generator.property.IProperty;
+import com.data.generator.property.Property;
+import com.data.generator.property.PropertyRandom;
+import com.data.utils.FileUtils;
 
 /**
  * Generowanie danych i ich zapis
@@ -9,27 +15,29 @@ import java.util.List;
  *
  * @param <T>
  */
-public class DataGenerator<T> implements IDataGenerator<T> {
+public class DataGenerator implements IDataGenerator {
 
-  public void createData() {
-    // TODO Auto-generated method stub
-
-  }
+  Map<Property, IProperty> propertiesRandom;
 
   @Override
-  public List<T> getData() {
-    // TODO Auto-generated method stub
-    return null;
+  public String getProperty(Property property) {
+    return propertiesRandom.get(property).getValue().toString();
   }
 
-  public void saveData(String pathFile) {
-    // TODO Auto-generated method stub
-
+  /**
+   * Here add new property
+   */
+  private void init() {
+    addPropertyRandom(Property.NAME, FileUtils.PROPERTY_NAME_PATH);
   }
 
-  public void loadData() {
-    // TODO Auto-generated method stub
+  public DataGenerator() {
+    this.propertiesRandom = new HashMap<>();
+    init();
+  }
 
+  public void addPropertyRandom(Property property, String filepath) {
+    propertiesRandom.put(Property.NAME, new PropertyRandom(FileUtils.getResourcePath(filepath)));
   }
 
 }
