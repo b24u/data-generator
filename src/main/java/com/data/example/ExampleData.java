@@ -6,54 +6,59 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * Przykladowy zestaw danych ktore beda wypelniane wygenerowanymi na podstawie danych bazowych
+ * 
+ * @author olszewskij
+ *
+ */
 @XmlRootElement(name = "ExampleData")
 public class ExampleData {
 
-	List<ExampleData> exampleList = new ArrayList<ExampleData>();
+  List<ExampleData> exampleList = new ArrayList<ExampleData>();
 
-	private int id;
-	private String name;
-	private int value;
+  private int id;
+  private String name;
+  private int value;
 
-	public ExampleData() {
-	}
+  public ExampleData() {}
 
-	public ExampleData(int id, String name, int value) {
-		this.id = id;
-		this.name = name;
-		this.value = value;
-	}
+  public ExampleData(int id, String name, int value) {
+    this.id = id;
+    this.name = name;
+    this.value = value;
+  }
 
-	@XmlAttribute(name = "id")
-	public int getId() {
-		return id;
-	}
+  @XmlAttribute(name = "id")
+  public int getId() {
+    return id;
+  }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+  public void setId(int id) {
+    this.id = id;
+  }
 
-	@XmlAttribute(name = "name")
-	public String getName() {
-		return name;
-	}
+  @XmlAttribute(name = "name")
+  public String getName() {
+    return name;
+  }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+  public void setName(String name) {
+    this.name = name;
+  }
 
-	@XmlAttribute(name = "value")
-	public int getValue() {
-		return value;
-	}
+  @XmlAttribute(name = "value")
+  public int getValue() {
+    return value;
+  }
 
-	public void setValue(int value) {
-		this.value = value;
-	}
+  public void setValue(int value) {
+    this.value = value;
+  }
 
-	@Override
-	public String toString() {
-		return "ExampleData [id=" + id + ", name=" + name + ", value=" + value + "]";
-	}
+  @Override
+  public String toString() {
+    return "ExampleData [id=" + id + ", name=" + name + ", value=" + value + "]";
+  }
 
 }
