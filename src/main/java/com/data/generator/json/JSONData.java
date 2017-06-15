@@ -6,8 +6,8 @@ import com.data.generator.IOData;
 
 public class JSONData<T> extends IOData<T> {
 
-  public JSONData(String filePath) {
-    super(filePath);
+  public JSONData(String filePath, Class<T> dataInstance) {
+    super(filePath, dataInstance);
   }
 
   @Override

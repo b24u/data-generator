@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface IImportData<T> {
 
-  List<T> csv();
+  List<T> csv(String filepath);
 
 }

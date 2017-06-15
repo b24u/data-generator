@@ -1,5 +1,9 @@
 package com.data.generator;
 
+/*
+ * not use to remove in version 1.0.1
+ */
+@Deprecated
 public interface IGenerator<T> {
 
   /**
