@@ -17,8 +17,8 @@ public class FileUtilsTest {
 	
 	@Before
 	public void setUp(){
-		filepath= "F://names.csv";
-		content= "Romek Atomek";
+		filepath= "/data-generator/src/main/resources/data/names.csv";
+		content= "Romek"+" Atomek";
 		
 		
 	}
