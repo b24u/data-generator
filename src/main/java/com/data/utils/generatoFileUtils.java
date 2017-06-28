@@ -42,7 +42,7 @@ public static String PROPERTY_NAME_PATH = "data/names.csv";
  * @throws FileNotFoundException 
    */
   
-public static void saveFile(String filepath, String content,Charset charset,boolean append) throws IOException {
+public void saveFile(String filepath, String content,Charset charset,boolean append) throws IOException {
 	 
 		 FileUtils.writeStringToFile(new File(filepath), content, StandardCharsets.UTF_8, true);
 	 }
