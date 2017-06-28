@@ -29,8 +29,8 @@ public static String PROPERTY_NAME_PATH = "data/names.csv";
  * @throws IOException 
    */
   public static String readFile(String filepath) throws IOException  {
-	  File file = new File(filepath);
-	  return FileUtils.readFileToString(file,StandardCharsets.UTF_8);
+	
+	  return FileUtils.readFileToString(new File(filepath),StandardCharsets.UTF_8);
       }
 
   /**
@@ -44,7 +44,6 @@ public static String PROPERTY_NAME_PATH = "data/names.csv";
   
 public static void saveFile(String filepath, String content,Charset charset,boolean append) throws IOException {
 	 
-	File file = new File(filepath);
-		 FileUtils.writeStringToFile(file, content, StandardCharsets.UTF_8, true);
+		 FileUtils.writeStringToFile(new File(filepath), content, StandardCharsets.UTF_8, true);
 	 }
 }
