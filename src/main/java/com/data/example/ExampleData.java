@@ -3,6 +3,8 @@ package com.data.example;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -15,7 +17,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "ExampleData")
 public class ExampleData {
 
-  List<ExampleData> exampleList = new ArrayList<ExampleData>();
+  
 
   private int id;
   private String name;

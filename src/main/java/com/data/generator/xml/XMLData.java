@@ -7,6 +7,8 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
+import com.data.example.ExampleData;
+import com.data.example.ExampleDatabase;
 import com.data.generator.IOData;
 
 /**
@@ -17,31 +19,35 @@ import com.data.generator.IOData;
  */
 public class XMLData<T> extends IOData<T> {
 
-	@Override
-	public void write(List<T> listElements) {
+	public void write(List<T> listData) {
 
 		try {
 
-			JAXBContext ctx = JAXBContext.newInstance();
+			JAXBContext ctx = JAXBContext.newInstance(ExampleDatabase.class);
 			Marshaller marshaller = ctx.createMarshaller();
 
 			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-			marshaller.marshal(listElements, new File(getFilePath()));
+			for(int i=0; i<listData.size(); i ++){
+			marshaller.marshal(listData.get(i), new File(getFilePath()));
+			}
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
 	}
+	
 
 	public XMLData(String filePath, Class<T> dataInstance) {
 		super(filePath, dataInstance);
 	}
 
+	
+
+
 	/**
 	 * To remove
 	 */
 	@Deprecated
-	public void write(T element) {
+	public void write1(T element) {
 		try {
 			System.out.println("dfds");
 			JAXBContext ctx = JAXBContext.newInstance(element.getClass());
@@ -60,5 +66,7 @@ public class XMLData<T> extends IOData<T> {
 
 		return null;
 	}
+
+
 
 }
