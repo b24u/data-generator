@@ -6,7 +6,7 @@ import java.util.Map;
 import com.data.generator.property.IProperty;
 import com.data.generator.property.Property;
 import com.data.generator.property.PropertyRandom;
-import com.data.utils.FileUtils;
+import com.data.utils.generatoFileUtils;
 
 /**
  * Generowanie danych i ich zapis
@@ -28,7 +28,7 @@ public class DataGenerator implements IDataGenerator {
    * Here add new property
    */
   private void init() {
-    addPropertyRandom(Property.NAME, FileUtils.PROPERTY_NAME_PATH);
+    addPropertyRandom(Property.NAME, generatoFileUtils.PROPERTY_NAME_PATH);
   }
 
   public DataGenerator() {
@@ -37,7 +37,7 @@ public class DataGenerator implements IDataGenerator {
   }
 
   public void addPropertyRandom(Property property, String filepath) {
-    propertiesRandom.put(Property.NAME, new PropertyRandom(FileUtils.getResourcePath(filepath)));
+    propertiesRandom.put(Property.NAME, new PropertyRandom(generatoFileUtils.getResourcePath(filepath)));
   }
 
 }

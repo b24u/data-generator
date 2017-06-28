@@ -1,12 +1,13 @@
 package com.data.XMLDataWriterTest;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.data.utils.FileUtils;
+import com.data.utils.generatoFileUtils;
 
 public class FileUtilsTest {
 	String filepath;
@@ -17,12 +18,14 @@ public class FileUtilsTest {
 		filepath= "F:/Repozytorium/data-generator/src/main/resources/data/names.csv";
 		content= "Romek Atomek";
 		
+		
 	}
 	
 	@Test
-	public void saveToFileTest(String filepath, String content) throws FileNotFoundException, IOException{
-		FileUtils fileUtils = new FileUtils();
-		fileUtils.saveFile(filepath, content,true);
+	public void saveToFileTest(String filepath, String content,boolean append) throws FileNotFoundException, IOException{
+		
+		generatoFileUtils fileUtils = new generatoFileUtils();
+		fileUtils.saveFile(filepath, content);
 		
 		
 	}
@@ -31,7 +34,7 @@ public class FileUtilsTest {
 	public void readFromFileTest(String filePath) throws IOException{
 		
 		
-		System.out.println(FileUtils.readFile(filePath));
+		System.out.println(generatoFileUtils.readFile(filePath));
 	}
 
 }

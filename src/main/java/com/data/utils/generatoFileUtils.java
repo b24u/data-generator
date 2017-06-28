@@ -3,13 +3,16 @@ package com.data.utils;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
 import org.apache.commons.io.FileUtils;
-public class FileUtils {
+
+
+public class generatoFileUtils {
 
   public static String PROPERTY_NAME_PATH = "data/names.csv";
 
   public static String getResourcePath(String shortPath) {
-    ClassLoader classLoader = FileUtils.class.getClassLoader();
+    ClassLoader classLoader = generatoFileUtils.class.getClassLoader();
     return classLoader.getResource(shortPath).getPath();
   }
 
@@ -21,8 +24,8 @@ public class FileUtils {
  * @throws IOException 
    */
   public static String readFile(String filepath) throws IOException  {
-	  	  
-	  return org.apache.commons.io.FileUtils.readFileToString(new File(filepath));
+	  File file = new File(filepath);
+	  return FileUtils.readFileToString(file);
       }
 
   /**
@@ -34,7 +37,8 @@ public class FileUtils {
  * @throws FileNotFoundException 
    */
   
-public static void saveFile(String filepath, String content, boolean append) throws IOException {
-		 org.apache.commons.io.FileUtils.writeStringToFile(new File(filepath), content, append);
+public static void saveFile(String filepath, String content) throws IOException {
+	File file = new File(filepath);
+		 FileUtils.writeStringToFile(file, content,true);
 	 }
 }
