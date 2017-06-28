@@ -24,7 +24,7 @@ public class FileUtilsTest {
 	}
 	
 	@Test
-	public void saveToFileTest(String filepath, String content,Charset charset,boolean append) throws FileNotFoundException, IOException{
+	public void saveToFileTest() throws FileNotFoundException, IOException{
 		
 		generatoFileUtils fileUtils = new generatoFileUtils();
 		fileUtils.saveFile(filepath, content, StandardCharsets.UTF_8, true);
@@ -33,10 +33,10 @@ public class FileUtilsTest {
 	}
 	
 	@Test
-	public void readFromFileTest(String filePath) throws IOException{
+	public void readFromFileTest() throws IOException{
 		
 		
-		System.out.println(generatoFileUtils.readFile(filePath));
+		System.out.println(generatoFileUtils.readFile(filepath));
 	}
 
 }
