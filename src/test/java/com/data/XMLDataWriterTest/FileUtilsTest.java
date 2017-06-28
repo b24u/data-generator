@@ -3,6 +3,8 @@ package com.data.XMLDataWriterTest;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -15,17 +17,17 @@ public class FileUtilsTest {
 	
 	@Before
 	public void setUp(){
-		filepath= "F:/Repozytorium/data-generator/src/main/resources/data/names.csv";
+		filepath= "F://names.csv";
 		content= "Romek Atomek";
 		
 		
 	}
 	
 	@Test
-	public void saveToFileTest(String filepath, String content,boolean append) throws FileNotFoundException, IOException{
+	public void saveToFileTest(String filepath, String content,Charset charset,boolean append) throws FileNotFoundException, IOException{
 		
 		generatoFileUtils fileUtils = new generatoFileUtils();
-		fileUtils.saveFile(filepath, content);
+		fileUtils.saveFile(filepath, content, StandardCharsets.UTF_8, true);
 		
 		
 	}
